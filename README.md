@@ -77,6 +77,18 @@ Estonian CLI aliases are also supported for backward compatibility:
 - `2` — **UNKNOWN (missing)**: source is unavailable or unknown.
 - `3` — **UNKNOWN (stale / incomplete)**: reading is older than `stale_minutes` (default `180`) or missing a required window.
 
+### Human Override (the gate is a brake, not a lock)
+
+`--check` only answers *allowed / denied*. It never kills a running job and has no override flag, by design: the decision to go past a limit belongs to a human, and it should be visible and time-boxed.
+
+The pattern we use in our own runner:
+
+1. The runner calls `kvoot.py --check worker --source <tool>` before every job (and every few minutes during a long one). `1` means: don't start, and stop the job that is running.
+2. When a human decides the work is worth it anyway (example: the screenshot above, where Codex was red at 74 % but the 5-hour window reset in 7 minutes), they write a small exception file next to the runner, e.g. `{"limit_5h": 100, "until": "2026-11-20T02:30:00+02:00", "approved_by": "<name>"}`.
+3. The runner reads that file on every check, uses the raised limit only until `until`, and logs who approved it. After that the normal limit applies again without anyone having to remember to switch it back.
+
+Keep the exception short (until the next window reset), signed with a name and outside the tool itself, so a forgotten override can't silently turn the gate off.
+
 ### Windows Desktop Shortcut
 
 - `kvoot_ava.pyw` runs `kvoot.py --all --open` without a console window.

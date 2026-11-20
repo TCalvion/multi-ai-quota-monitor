@@ -74,6 +74,18 @@ Eestikeelsed lipud jäävad aliastena alles: `--kontroll` (`tooline|juht`), `--a
 - `2` — **TEADMATA (puudub)**: allikas puudub või on tundmatu.
 - `3` — **TEADMATA (vana / puudulik)**: näit on vanem kui `stale_minutes` (vaikimisi `180` min) või aken puudub.
 
+### Inimese erand (värav on pidur, mitte lukk)
+
+`--check` vastab ainult *lubatud / keelatud*. Jooksvat tööd see ei peata ja erandilippu tal pole. See on teadlik valik: piirist üle minna otsustab inimene ja see otsus peab olema nähtav ja ajaliselt piiratud.
+
+Muster, mida kasutame oma käivitajas:
+
+1. Käivitaja küsib `kvoot.py --check worker --source <tööriist>` enne iga tööd (ja pika töö ajal iga paari minuti järel). `1` tähendab: ära alusta ja peata jooksev töö.
+2. Kui inimene otsustab, et töö on seda väärt (näide: ülemine pilt, kus Codex oli punane 74 % peal, aga 5 h aken taastus 7 minuti pärast), kirjutab ta käivitaja kõrvale väikese erandifaili, nt `{"limit_5h": 100, "until": "2026-11-20T02:30:00+02:00", "approved_by": "<nimi>"}`.
+3. Käivitaja loeb faili igal kontrollil, kasutab tõstetud piiri ainult kuni `until` ajani ja logib, kes loa andis. Pärast seda kehtib tavapiir jälle ise, keegi ei pea mäletama seda tagasi keerata.
+
+Hoia erand lühike (kuni järgmise akna taastumiseni), nimega allkirjastatud ja tööriistast väljaspool, et unustatud erand ei saaks väravat vaikselt välja lülitada.
+
 ## Seadistus
 
 Prioriteet: **keskkonnamuutuja > `<skripti_kaust>/kvoot.config.json` > vaikeväärtus**. Windowsi keskkonnamuutujad ei jõua WSL-i alamprotsessidesse, skripti kaustas olev `kvoot.config.json` jõuab. Windowsis tasub määrata `timezone` failis `kvoot.config.json` (nt `"Europe/Tallinn"`).
