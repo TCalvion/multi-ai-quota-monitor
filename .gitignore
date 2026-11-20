@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.venv/
+kvoot.json
+kvoot.html
+kvoot.config.json
+.kvoot-export
+logs/

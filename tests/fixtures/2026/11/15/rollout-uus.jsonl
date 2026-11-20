@@ -1,0 +1,3 @@
+{"timestamp":"2026-11-15T07:00:00Z","type":"event_msg","payload":{"type":"token_count","rate_limits":{"limit_id":"codex","primary":{"used_percent":30.0,"window_minutes":300,"resets_at":1794740400},"secondary":{"used_percent":15.0,"window_minutes":10080,"resets_at":1795186800}}}}
+{KATKINE JSON RIDA "rate_limits": ...
+{"timestamp":"2026-11-15T08:00:00Z","type":"event_msg","payload":{"type":"token_count","rate_limits":{"limit_id":"codex","primary":{"used_percent":42.5,"window_minutes":300,"resets_at":1794744000},"secondary":{"used_percent":18.0,"window_minutes":10080,"resets_at":1795186800}}}}

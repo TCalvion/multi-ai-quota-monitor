@@ -1,0 +1,13 @@
+ClaudeBar
+Copyright 2025-2026 tddworks and the ClaudeBar contributors
+
+This product includes software developed by tddworks
+(https://github.com/tddworks/ClaudeBar), licensed under the Apache License,
+Version 2.0 (vt LICENSES/Apache-2.0.txt).
+
+Porditud ja kohandatud osad selles repos:
+- `claude_usage.py`: sektsioonipealkirjade loogika (`SECTION_STARTS`),
+  päringupiirangu tuvastus (`_is_rate_limit_row`, `_only_breakdown_rate_limited`)
+  ning ekraaniparsimise mustrid ClaudeBarist (`claude-usage-screen.js`).
+- `antigravity_probe.py`: kohaliku keeleserveri liidese endpointide nimed ja
+  `bucketId` vastendused (`antigravity.json`, `antigravity-usage.js`).
