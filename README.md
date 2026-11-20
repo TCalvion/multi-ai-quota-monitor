@@ -6,6 +6,14 @@ One view for several AI providers' quotas: a lightweight Python standard-library
 
 **Requirements:** Python 3.10+ (standard library only). Node.js is optional and only needed to run the HTML/JS unit test (which is skipped automatically if `node` is not installed).
 
+## Screenshot
+
+One page, one bar per quota window. The 50 % mark stops automated workers, the 70 % mark stops lead agents.
+
+![Multi-AI Quota Monitor 1/3](docs/screenshot-1.png)
+![Multi-AI Quota Monitor 2/3](docs/screenshot-2.png)
+![Multi-AI Quota Monitor 3/3](docs/screenshot-3.png)
+
 ## Quickstart
 
 1. Download or clone this repository (`git clone https://github.com/TCalvion/multi-ai-quota-monitor.git`).

@@ -6,6 +6,14 @@ Pythoni standardteegil põhinev tööriist, mis annab ühe vaate mitme AI-pakkuj
 
 **Nõuded:** Python 3.10+ (ainult standardteek). Node.js on vajalik ainult HTML/JS-testi jaoks, mis ilma `node`-ita jääb automaatselt vahele.
 
+## Kuvatõmmis
+
+Üks leht, iga kvoodiakna kohta üks riba. 50 % piir peatab automaatsed töölised, 70 % piir juhtagendid.
+
+![Mitme AI kvoodimõõdik 1/3](docs/screenshot-1.png)
+![Mitme AI kvoodimõõdik 2/3](docs/screenshot-2.png)
+![Mitme AI kvoodimõõdik 3/3](docs/screenshot-3.png)
+
 ## Kiirstart
 
 1. Laadi see repositoorium alla või klooni (`git clone https://github.com/TCalvion/multi-ai-quota-monitor.git`).
